@@ -3,6 +3,7 @@ import fetch from "cross-fetch";
 import Link from "next/link";
 import { Container, Grid } from "@material-ui/core";
 import PostListItem from "../components/PostListItem";
+import Prefetch from "@xdn/react/Prefetch";
 
 export default function Home({ posts }) {
   return (
@@ -18,9 +19,11 @@ export default function Home({ posts }) {
                 as={`/posts/${post.id}`}
                 passHref
               >
-                <a style={{ textDecoration: "none" }}>
-                  <PostListItem post={post} />
-                </a>
+                <Prefetch>
+                  <a style={{ textDecoration: "none" }}>
+                    <PostListItem post={post} />
+                  </a>
+                </Prefetch>
               </Link>
             ))}
           </Grid>
