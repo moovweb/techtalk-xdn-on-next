@@ -26,22 +26,24 @@ export default function Header() {
   }, []);
 
   return (
-    <AppBar position="static" style={{ marginBottom: 16 }}>
-      <Toolbar>
-        <Container maxWidth="lg">
-          <Link href="/" as="/" passHref>
-            <Prefetch>
-              <a style={{ textDecoration: "none", color: "white" }}>
-                <Typography variant="h6">My Blog</Typography>
-              </a>
-            </Prefetch>
-          </Link>
-        </Container>
-      </Toolbar>
-      <LinearProgress
-        style={{ visibility: loading ? "visible" : "hidden" }}
-        color="secondary"
-      />
-    </AppBar>
+    <div style={{ paddingBottom: 78 }}>
+      <AppBar position="fixed" style={{ marginBottom: 16 }}>
+        <Toolbar>
+          <Container maxWidth="lg">
+            <Link href="/" as="/" passHref>
+              <Prefetch>
+                <a style={{ textDecoration: "none", color: "white" }}>
+                  <Typography variant="h6">My Blog</Typography>
+                </a>
+              </Prefetch>
+            </Link>
+          </Container>
+        </Toolbar>
+        <LinearProgress
+          style={{ visibility: loading ? "visible" : "hidden" }}
+          color="secondary"
+        />
+      </AppBar>
+    </div>
   );
 }
