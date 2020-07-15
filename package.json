@@ -1,14 +1,26 @@
 {
-  "name": "xdn-next-demo",
+  "name": "next-on-xdn",
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "xdn": "xdn",
+    "xdn:start": "xdn run",
+    "xdn:build": "xdn build",
+    "xdn:deploy": "xdn deploy",
     "dev": "next dev",
     "build": "next build",
     "start": "next start"
   },
   "dependencies": {
+    "@material-ui/core": "^4.11.0",
+    "@xdn/cli": "1.40.0",
+    "@xdn/core": "1.40.0",
+    "@xdn/next": "1.40.0",
+    "@xdn/prefetch": "1.40.0",
+    "@xdn/react": "1.40.0",
+    "cross-fetch": "^3.0.5",
     "next": "9.4.4",
+    "next-offline": "^5.0.2",
     "react": "16.13.1",
     "react-dom": "16.13.1"
   }
