@@ -7,6 +7,26 @@ module.exports = new Router()
   .match("/service-worker.js", ({ serviceWorker }) => {
     return serviceWorker(".next/static/service-worker.js");
   })
+  .get("/", ({ cache }) => {
+    cache({
+      browser: {
+        maxAgeSeconds: 0,
+      },
+      edge: {
+        maxAgeSeconds: 60 * 60,
+      },
+    });
+  })
+  .get("/posts/:id", ({ cache }) => {
+    cache({
+      browser: {
+        maxAgeSeconds: 0,
+      },
+      edge: {
+        maxAgeSeconds: 60 * 60,
+      },
+    });
+  })
   .match("/_next/data/:version/index.json", ({ cache }) => {
     cache({
       edge: {
